@@ -4,29 +4,33 @@
   <meta charset="UTF-8">
   <title>Ralph and Dimples</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lib/tachyons.min.css"/>
   <style>
-    body {
-      align-items: center;
-      background-color: #222;
-      color: #aaa;
-      display: flex;
-      font-weight: bold;
-      font: 16px/1.5 -apple-system, sans-serif;
-      height: 100vh;
-      letter-spacing: 2pt;
-      margin: 0;
-      padding: 0;
-      text-transform: uppercase;
-      width: 100vw;
+    #bg {
+      background-image: url(images/bg-wedding-rings.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-background-size: cover;
+      background-size: cover;
     }
-    div {
-      margin: auto;
-      text-align: center;
+    h1, h2 {
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 1);
     }
   </style>
 </head>
-<body>
-  <div>Ralph and Dimples <br>Feb 2019</div>
+<body class="bg-black tracked sans-serif">
+  
+  <header class="vh-100 dt w-100">
+    <div id="bg" class="dtc v-mid cover ph3 ph4-m ph5-l w-100 h-100">
+      <h1 class="f2 f-subheadline-l measure lh-title fw9 white">Ralph &amp; Dimples</h1>
+      <h2 class="f6 fw6 white">February 2019</h2>
+    </div>
+  </header>
+
+  <div style="font: 0/0 a; height: 0; opacity: 0">
+    Photo by Flash Bros from Pexels https://www.pexels.com/photo/black-and-silver-ring-204993/
+  </div>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830695-1"></script>
   <script>
