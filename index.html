@@ -2,34 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ralph and Dimples</title>
+  <title>Ralph and Maria</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/tachyons.min.css"/>
   <style>
-    #bg {
-      background-image: url(images/bg-wedding-rings.jpg);
-      background-repeat: no-repeat;
-      background-position: center center;
-      -webkit-background-size: cover;
-      background-size: cover;
+    header img {
+      max-width: 85%;
     }
-    h1, h2 {
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+    h3 {
+      position: relative;
+      top: -15px;
+    }
+    body.w-ns {
+      background: url(/images/rd.jpg) no-repeat bottom center;
+      background-size: contain;
+      min-height: 100vh;
+    }
+    body {
+      background-size: cover;
     }
   </style>
 </head>
-<body class="bg-black tracked sans-serif">
+<body class="tracked sans-serif ma0 near-black w-ns pa0">
   
-  <header class="vh-100 dt w-100">
-    <div id="bg" class="dtc v-mid cover ph3 ph4-m ph5-l w-100 h-100">
-      <h1 class="f2 f-subheadline-l measure lh-title fw9 white">Ralph &amp; Dimples</h1>
-      <h2 class="f6 fw6 white">February 2019</h2>
-    </div>
-  </header>
+  <header class="pt4-ns pt6 mb0 tc"> <img src="/images/rd-header.png" alt="Ralph and Maria"> </header>
 
-  <div style="font: 0/0 a; height: 0; opacity: 0">
-    Photo by Flash Bros from Pexels https://www.pexels.com/photo/black-and-silver-ring-204993/
-  </div>
+  <h3 id="countdown" class="black ma0 pa0 tc"></h3>
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@latest/moment.min.js"></script>
+  <script>
+    const deadline = moment([2019, 1, 9]);
+    const now = moment();
+    const countdown = document.getElementById('countdown');
+    countdown.innerHTML = now.to(deadline);
+  </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830695-1"></script>
