@@ -1,0 +1,29 @@
+{
+  "name": "ralphanddimples",
+  "version": "1.0.0",
+  "description": "Ralph and Maria \"Dimples\" wedding website",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "concurrently": "^4.0.1",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
+    "postcss": "^7.0.5",
+    "postcss-cli": "^6.0.0"
+  },
+  "license": "SEE LICENSE IN https://github.com/ralphtimramos/ralphanddimples/blob/master/LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ralphtimramos/ralphanddimples.git"
+  },
+  "scripts": {
+    "build-task:scss-compile": "node-sass --source-map true src/scss -o dist/css --output-style compressed",
+    "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "sass:build": "npm-run-all -p build-task:*",
+    "sass:watch": "nodemon -e scss -x \"npm run sass:build\"",
+    "dev": "concurrently \"npm-run-all -p sass:*\" \"live-server\""
+  }
+}

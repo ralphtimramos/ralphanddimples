@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Winter-Calligraphy';
+  src:url('/fonts/Winter-Calligraphy.ttf.woff') format('woff'),
+      url('/fonts/Winter-Calligraphy.ttf.svg#Winter-Calligraphy') format('svg'),
+      url('/fonts/Winter-Calligraphy.ttf.eot'),
+      url('/fonts/Winter-Calligraphy.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font: 500 18px/1.618 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: 'Winter-Calligraphy', cursive;
+  text-transform: lowercase;
+}
+
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
