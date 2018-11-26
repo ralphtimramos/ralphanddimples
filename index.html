@@ -2,61 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ralph and Maria</title>
+  <title>Ralph &amp; Maria</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="lib/tachyons.min.css"/>
-  <style>
-    header img {
-      max-width: 85%;
-    }
-    h3 {
-      position: relative;
-      top: -15px;
-    }
-    body.w-ns {
-      background: url(/images/rd.jpg) no-repeat bottom center;
-      background-size: contain;
-      height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
-    }
-    body {
-      background-size: cover;
-    }
-  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:600|Montserrat:500">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="/dist/css/r&m.css">
 </head>
-<body class="tracked sans-serif ma0 near-black w-ns pa0">
-  
-  <header class="pt4-ns pt6 mb0 tc"> <img src="/images/rd-header.png" alt="Ralph and Maria"> </header>
-
-  <h3 id="countdown" class="black ma0 pa0 tc"></h3>
-
-  <script src="https://cdn.jsdelivr.net/npm/moment@latest/moment.min.js"></script>
-  <script>
-    // countdown
-    const deadline = moment([2019, 1, 9]);
-    const now = moment();
-    const countdown = document.getElementById('countdown');
-    countdown.innerHTML = now.to(deadline);
-    // 100vh fix
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-    let vh = window.innerHeight * 0.01;
-    // Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // We listen to the resize event
-    window.addEventListener('resize', () => {
-      // We execute the same script as before
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
-  </script>
-
+<body>
+  <header>
+    <div class="silver-brand">
+      <div>
+        <img src="/img/r&m.png" alt="" class="rm-art">
+        <p class="date"> February 9, 2019 </p>
+        <h1>Ralph &amp;  Maria</h1>
+        <p> are getting married! </p>
+      </div>
+    </div>
+    <a href="/rsvp" class="btn-call-to-action">RSVP Now <span class="icon-right-open-big"></span></a>
+  </header>
+  <section>
+    <h2>Wedding Party</h2>
+    <dl>
+      <dt>Maid/Matron of Honor</dt>
+      <dd>Rica Rivera</dd>
+      <dd>Celine Villanueva</dd>
+    </dl>
+    <dl>
+      <dt>Best Men</dt>
+      <dd>Jefferson Yosuico</dd>
+      <dd>John Yumul, Sr.</dd>
+    </dl>
+    <dl>
+      Bridesmaids
+      <dd>Maria "Che Che" Yumul</dd>
+      <dd>Maricris Dizon</dd>
+      <dd>Sanda Soto</dd>
+      <dd>Bea De Los Santos</dd>
+    </dl>
+    <dl>
+      <dt>Groomsmen</dt>
+      <dd>Richard Thomas S. Ramos</dd>
+      <dd>Raymund Theodore S. Ramos</dd>
+      <dd>Christian Marquez</dd>
+      <dd>Lorenzo San Juan</dd>
+    </dl>
+  </section>
+    
+  </section>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830695-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-114830695-1');
   </script>
 </body>

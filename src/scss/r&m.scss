@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('/fonts/fontello.eot?99602696');
+  src: url('/fonts/fontello.eot?99602696#iefix') format('embedded-opentype'),
+       url('/fonts/fontello.woff2?99602696') format('woff2'),
+       url('/fonts/fontello.woff?99602696') format('woff'),
+       url('/fonts/fontello.ttf?99602696') format('truetype'),
+       url('/fonts/fontello.svg?99602696#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?99602696#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-right-open-big:before { content: '\e800'; } /* '' */
+
+@font-face {
+  font-family: 'Winter-Calligraphy';
+  src:url('/fonts/Winter-Calligraphy.ttf.woff') format('woff'),
+      url('/fonts/Winter-Calligraphy.ttf.svg#Winter-Calligraphy') format('svg'),
+      url('/fonts/Winter-Calligraphy.ttf.eot'),
+      url('/fonts/Winter-Calligraphy.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+$accent-green: #3e857b;
+$accent-teal: #4893b1;
+$dark-gray: #707070;
+$light-gray: #dedede;
+$white: #fff;
+
+%reset {
+  border: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+body {
+  color: $dark-gray;
+  font: 500 18px/1.618 'Montserrat', sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Winter-Calligraphy', cursive;
+  text-align: center;
+  text-transform: lowercase;
+  &.custom {
+    @extend h1;
+    text-transform: uppercase;
+  }
+}
+
+header {
+  @extend h1;
+  background: $white url('/img/hero-background.jpg') no-repeat top center;
+  background-size: cover;
+  border-bottom: 1px solid $light-gray;
+  margin-top: 25px;
+  padding-bottom: 50px;
+  padding-top: 100px;
+  position: relative;
+  h1,
+  p {
+    @extend %reset;
+  }
+  h1 {
+    border-bottom: 2px solid $light-gray;
+    border-top: 2px solid $light-gray;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64%;
+  }
+  p {
+    color: $accent-green;
+    letter-spacing: 1pt;
+    padding: .5em 0;
+    font-size: 1.174em;
+    &.date {
+      font-size: 1em;
+      margin-top: 2em;
+    }
+  }
+}
+
+.silver-brand {
+  background: $dark-gray;
+  background: -moz-linear-gradient(-45deg, $dark-gray 0%, $light-gray 100%);
+  background: -webkit-linear-gradient(-45deg, $dark-gray 0%,$light-gray 100%);
+  background: linear-gradient(135deg, $dark-gray 0%,$light-gray 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-gray', endColorstr='$light-gray',GradientType=1 );
+  padding: 1px 0;
+  margin: -1px auto -1px;
+  width: 658px;
+  > div {
+    background-color: $white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+  }
+}
+
+.btn-call-to-action {
+  background-color: $accent-teal;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+  color: $white;
+  display: inline-block;
+  margin: auto;
+  padding: .25em .25em .25em .77em;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+
+.rm-art {
+  position: absolute;
+  left: 50%;
+  top: -41%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+dl,
+dt,
+dd {
+  @extend %reset;
+}
+
+dt {
+  font-weight: bold;
+}
+
+section {
+  margin: 1em auto;
+  width: 658px;
+}
