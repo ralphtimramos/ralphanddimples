@@ -119,6 +119,7 @@ small {
   font-size: 0.707rem;
 }
 
+// html styling
 body {
   color: $dark-gray;
   font: 500 14px/1.618 'Montserrat', sans-serif;
@@ -153,6 +154,14 @@ dd {
 
 dt {
   font-weight: bold;
+}
+
+li {
+  margin-bottom: 1.202rem; 
+  strong {
+    color: darken($light-gray, 23%);
+    display: block;
+  }
 }
 
 header {
