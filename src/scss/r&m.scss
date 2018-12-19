@@ -354,71 +354,56 @@ footer {
   }
 }
 
-// dialog
-dialog + section {
+// dialog box
+.dialog + section {
   padding-top: 45px;
 }
 
-dialog {
+.dialog {
   background-color: $white;
   border: 1px solid $dark-gray;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .32);
   left: 50%;
-  margin: auto;
   padding-bottom: 2em;
   padding-top: 2em;
   position: fixed;
   text-align: center;
-  top: 4%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease-out;
   width: calc(100% - 72px);
   z-index: 110;
-  > div {
-    padding: 1em 0 2em;
-  }
-  /* native backdrop */
-  &::backdrop {
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  /* polyfill backdrop */
-  + .backdrop {
-    background-color: rgba(0, 0, 0, 0.4);
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-  }
   .btn {
     margin-right: .5em;
   }
-}
-
-dialog[open] {
-  animation: slide-up 0.4s ease-out;
-}
-
-dialog.hide {
-  animation: slide-down 0.4s ease-out;
-}
-
-@keyframes slide-up {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 15px);
-  }
-  100% {
+  &.show {
     opacity: 1;
-    transform: translate(-50%, 0);
+  }
+  &.hide {
+    opacity: 0;
   }
 }
 
-@keyframes slide-down {
-  0% {
+.dialog-backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.4s ease-out;
+  width: 100vw;
+  z-index: 100;
+  &.show {
     opacity: 1;
-    transform: translate(-50%, 0);
   }
-  100% {
+  &.hide {
     opacity: 0;
-    transform: translate(-50%, 15px);
   }
+}
+
+.dialog-container div {
+  padding: 1em 2em 2em;
 }

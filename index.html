@@ -13,14 +13,17 @@
   <link rel=”shortcut icon” type=”image/x-icon” href=”/favicon.ico”>
 </head>
 <body>
-  <!--dialog>
-    <h3>Have you RSVP'd?</h3>
-    <div>
-      <p>Guest list is almost full! (73%) Please <a href="/rsvp" class="link-copy">RSVP</a> if you haven't already.</p>
+  <div class="dialog hide">
+    <div class="dialog-container">
+      <h3>Have you RSVP'd?</h3>
+      <div>
+        <p>Guest list is almost full! (73%)<br> Please <a href="/rsvp" class="link-copy">RSVP</a> if you haven't already.</p>
+      </div>
+      <a href="/rsvp" class="btn link">RSVP Now <span class="icon-right-open"></span></a>
+      <a href="javascript:;" class="link-copy link-close-modal">close</a>
     </div>
-    <a href="/rsvp" class="btn link">RSVP Now <span class="icon-right-open"></span></a>
-    <a href="#" class="link-copy link-close-modal">Already did</a>
-  </dialog-->
+  </div>
+  <div class="dialog-backdrop hide"></div>
   <header>
     <div class="silver-band">
       <div>
@@ -168,6 +171,22 @@
   <footer class="center">
     <small>Ralph &amp; Maria &copy; 2018. All rights reserved.</small>
   </footer>
+  <script>
+    const dialog = document.getElementsByClassName('dialog')[0];
+    const backdrop = document.getElementsByClassName('dialog-backdrop')[0];
+    window.setTimeout(() => {
+      dialog.classList.remove('hide');
+      dialog.classList.add('show');
+      backdrop.classList.remove('hide');
+      backdrop.classList.add('show');
+    }, 3 * 1000);
+    const closeTrigger = document.getElementsByClassName('link-close-modal')[0];
+    closeTrigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      dialog.remove();
+      backdrop.remove();
+    });
+  </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830695-1"></script>
   <script>
