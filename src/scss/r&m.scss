@@ -215,17 +215,19 @@ header {
 
 .btn {
   background-color: $accent-teal;
-  bottom: 0;
   box-shadow: 0 0 4px rgba(0, 0, 0, .32);
   color: $white;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
-  left: 50%;
+  font-size: 1.44rem;
   line-height: 1;
   padding: .33rem 0 .33rem .67rem;
-  position: absolute;
   text-transform: uppercase;
-  transform: translate(-50%, 50%);
+  &.btn-rsvp {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 50%);
+  }
 }
 
 .silver-band {
@@ -302,11 +304,6 @@ footer {
   height: 100%;
 }
 
-.space-between {
-  display: block;
-  height: 45px;
-}
-
 .w-100 {
   width: 100%;
 }
@@ -354,5 +351,70 @@ footer {
     align-items: stretch;
     flex-direction: column;
     grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+// dialog
+dialog + section {
+  padding-top: 45px;
+}
+
+dialog {
+  margin: auto;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  position: fixed;
+  text-align: center;
+  top: 4%;
+  width: calc(100% - 72px);
+  z-index: 110;
+  > div {
+    padding: 1em 0 2em;
+  }
+  /* native backdrop */
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  /* polyfill backdrop */
+  + .backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  .btn {
+    margin-right: .5em;
+  }
+}
+
+dialog[open] {
+  animation: slide-up 0.4s ease-out;
+}
+
+dialog.hide {
+  animation: slide-down 0.4s ease-out;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translate(0, 15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 15px);
   }
 }

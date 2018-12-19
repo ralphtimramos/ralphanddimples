@@ -13,6 +13,14 @@
   <link rel=”shortcut icon” type=”image/x-icon” href=”/favicon.ico”>
 </head>
 <body>
+  <dialog>
+    <h3>Have you RSVP'd?</h3>
+    <div>
+      <p>Guest list is almost full! (73%) Please <a href="/rsvp" class="link-copy">RSVP</a> if you haven't already.</p>
+    </div>
+    <a href="/rsvp" class="btn link">RSVP Now <span class="icon-right-open"></span></a>
+    <a href="#" class="link-copy link-close-modal">Already did</a>
+  </dialog>
   <header>
     <div class="silver-band">
       <div>
@@ -22,9 +30,8 @@
         <p>are getting married!</p>
       </div>
     </div>
-    <a href="/rsvp" class="btn link">RSVP Now <span class="icon-right-open"></a>
+    <a href="/rsvp" class="btn btn-rsvp link">RSVP Now <span class="icon-right-open"></a>
   </header>
-  <div class="space-between"></div>
   <section>
     <div class="center flex-columns">
       <div>
@@ -161,6 +168,21 @@
   <footer class="center">
     <small>Ralph &amp; Maria &copy; 2018. All rights reserved.</small>
   </footer>
+  <script>
+    const dialog = document.querySelector('dialog');
+    setTimeout(() => { dialog.showModal() }, 3 * 1000);
+    
+    const closeModalTrigger = document.getElementsByClassName('link-close-modal')[0];
+    closeModalTrigger.addEventListener('click', function(event) {
+      event.preventDefault();
+      dialog.classList.add('hide');
+      dialog.addEventListener('webkitAnimationEnd', function() {
+        dialog.classList.remove('hide');
+        dialog.close();
+        dialog.removeEventListener('webkitAnimationEnd', arguments.callee, false);
+      }, false);
+    });
+  </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830695-1"></script>
   <script>
