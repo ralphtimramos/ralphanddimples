@@ -166,22 +166,6 @@
   <footer class="center">
     <small>Ralph &amp; Maria &copy; 2018. All rights reserved.</small>
   </footer>
-  <script>
-    const dialog = document.getElementsByClassName('dialog')[0];
-    const backdrop = document.getElementsByClassName('dialog-backdrop')[0];
-    window.setTimeout(() => {
-      dialog.classList.remove('hide');
-      dialog.classList.add('show');
-      backdrop.classList.remove('hide');
-      backdrop.classList.add('show');
-    }, 3 * 1000);
-    const closeTrigger = document.getElementsByClassName('link-close-modal')[0];
-    closeTrigger.addEventListener('click', (event) => {
-      event.preventDefault();
-      dialog.remove();
-      backdrop.remove();
-    });
-  </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830695-1"></script>
   <script>
