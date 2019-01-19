@@ -285,7 +285,7 @@ section {
 
 footer {
   background-color: $light-gray;
-  padding: .5rem 0;
+  padding: .5rem 0 1.25rem;
 }
 
 .center {
@@ -355,55 +355,55 @@ footer {
 }
 
 // dialog box
-.dialog + section {
-  padding-top: 45px;
-}
+// .dialog + section {
+//   padding-top: 45px;
+// }
 
-.dialog {
-  background-color: $white;
-  border: 1px solid $dark-gray;
-  box-shadow: 0 0 4px rgba(0, 0, 0, .32);
-  left: 50%;
-  padding-bottom: 2em;
-  padding-top: 2em;
-  position: fixed;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.4s ease-out;
-  width: calc(100% - 72px);
-  z-index: 110;
-  .btn {
-    margin-right: .5em;
-  }
-  &.show {
-    opacity: 1;
-  }
-  &.hide {
-    opacity: 0;
-  }
-}
+// .dialog {
+//   background-color: $white;
+//   border: 1px solid $dark-gray;
+//   box-shadow: 0 0 4px rgba(0, 0, 0, .32);
+//   left: 50%;
+//   padding-bottom: 2em;
+//   padding-top: 2em;
+//   position: fixed;
+//   text-align: center;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   transition: opacity 0.4s ease-out;
+//   width: calc(100% - 72px);
+//   z-index: 110;
+//   .btn {
+//     margin-right: .5em;
+//   }
+//   &.show {
+//     opacity: 1;
+//   }
+//   &.hide {
+//     opacity: 0;
+//   }
+// }
 
-.dialog-backdrop {
-  background-color: rgba(0, 0, 0, 0.4);
-  bottom: 0;
-  content: "";
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: opacity 0.4s ease-out;
-  width: 100vw;
-  z-index: 100;
-  &.show {
-    opacity: 1;
-  }
-  &.hide {
-    opacity: 0;
-  }
-}
+// .dialog-backdrop {
+//   background-color: rgba(0, 0, 0, 0.4);
+//   bottom: 0;
+//   content: "";
+//   height: 100vh;
+//   left: 0;
+//   position: fixed;
+//   right: 0;
+//   top: 0;
+//   transition: opacity 0.4s ease-out;
+//   width: 100vw;
+//   z-index: 100;
+//   &.show {
+//     opacity: 1;
+//   }
+//   &.hide {
+//     opacity: 0;
+//   }
+// }
 
-.dialog-container div {
-  padding: 1em 2em 2em;
-}
+// .dialog-container div {
+//   padding: 1em 2em 2em;
+// }
